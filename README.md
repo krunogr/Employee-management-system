@@ -17,7 +17,7 @@ First screen when you run app (1th image)
 
 On the second page, user can add a new employee in the system. 
 
-![Alt text](https://github.com/krunogr/Employees-management-system/blob/master/Employees-management-system/web/screenshoots/second.JPG "start screen")
+![Alt text](https://github.com/krunogr/Employees-management-system/blob/master/Employees-management-system/web/screenshoots/second.JPG "")
 
 On the second page, user can see all departments in the company and see how many people work in every of those department. 
 

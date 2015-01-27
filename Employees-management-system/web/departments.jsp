@@ -30,19 +30,14 @@
                                    user="${applicationScope.USERNAME_FOR_DB}"
                                    password="${applicationScope.PASSWORD_FOR_DB}"/>
 
-                <sql:query dataSource="${con}" var="forma">SELECT DISTINCT department FROM employees</sql:query>
+                <sql:query dataSource="${con}" var="forma">SELECT department, COUNT(name) AS number FROM employees GROUP BY department</sql:query>
                     <table width="50%" style="margin-left: 180px;">
                         <tr>
                             <th>Department</th>
                             <th>Number of employees</th>
-                            <c:forEach var="row" items="${forma.rows}">
-                                <sql:query dataSource="${con}" var="forma2">SELECT COUNT(*)  AS 'number' FROM employees WHERE department='${row.department}'</sql:query>
-
-                                <tr>
+                            <c:forEach var="row" items="${forma.rows}"> <tr>
                                     <td><c:out value="${row.department}"/></td>
-                                <c:forEach var="row2" items="${forma2.rows}">
-                                    <td><c:out value="${row2.number}"/></td>
-                                </c:forEach>
+                                    <td><c:out value="${row.number}"/></td>
                             </tr>
                         </c:forEach>
 
